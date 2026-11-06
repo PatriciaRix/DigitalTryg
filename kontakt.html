@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Kontakt DigitalTryg og send os dine spørgsmål om digital sikkerhed.">
+  <title>Kontakt | DigitalTryg</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <a href="#indhold" class="skip-link">Spring til indhold</a>
+
+  <header class="site-header">
+    <div class="container header-content">
+      <a href="index.html" class="logo">DigitalTryg</a>
+
+      <nav aria-label="Hovednavigation">
+        <ul class="nav-list">
+          <li><a href="index.html">Forside</a></li>
+          <li><a href="tips.html">Tips</a></li>
+          <li><a href="sikkerhed.html">Sikkerhed</a></li>
+          <li><a href="om.html">Om DigitalTryg</a></li>
+          <li><a href="kontakt.html" aria-current="page">Kontakt</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="indhold">
+
+    <section class="contact-hero">
+      <div class="container">
+        <p class="eyebrow">VI ER HER FOR AT HJÆLPE</p>
+        <h1>Har du et spørgsmål?</h1>
+        <p class="hero-description">
+          Har du spørgsmål om digital sikkerhed eller forslag
+          til vores hjemmeside? Så vil vi gerne høre fra dig.
+        </p>
+      </div>
+    </section>
+
+    <section class="contact-section container" aria-labelledby="contact-title">
+
+      <div class="contact-info">
+        <p class="eyebrow">KONTAKT DIGITALTRYG</p>
+        <h2 id="contact-title">Lad os høre fra dig</h2>
+        <p>
+          Udfyld formularen, hvis du har et spørgsmål
+          eller gerne vil dele et forslag.
+        </p>
+
+        <div class="contact-note">
+          <h3>Husk din sikkerhed</h3>
+          <p>
+            Send aldrig adgangskoder, MitID-oplysninger
+            eller andre følsomme oplysninger gennem formularen.
+          </p>
+        </div>
+
+<div class="contact-info">
+  <h3>Kontaktoplysninger</h3>
+  <p>
+    DigitalTryg er et studieprojekt.
+    Kontaktoplysningerne er fiktive.
+  </p>
+  <p>
+    <strong>E-mail:</strong>
+    kontakt@digitaltryg.example
+  </p>
+</div>
+
+
+
+      </div>
+
+      <div class="contact-form-box">
+        <h2>Send en besked</h2>
+
+        <form action="#" method="post">
+          <div class="form-group">
+            <label for="name">Dit navn</label>
+            <input type="text" id="name" name="name"
+                   autocomplete="name" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Din e-mail</label>
+            <input type="email" id="email" name="email"
+                   autocomplete="email" required>
+          </div>
+
+          <div class="form-group">
+            <label for="subject">Emne</label>
+            <select id="subject" name="subject" required>
+              <option value="">Vælg et emne</option>
+              <option value="sikkerhed">Digital sikkerhed</option>
+              <option value="tips">Tips og gode råd</option>
+              <option value="forslag">Forslag til hjemmesiden</option>
+              <option value="andet">Andet</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Din besked</label>
+            <textarea id="message" name="message"
+                      rows="6" required></textarea>
+          </div>
+
+          <button type="button" class="button" disabled>Send besked (demo)</button>
+        </form>
+
+        <p class="form-disclaimer">
+          Dette er en demonstrationsformular til et studieprojekt.
+          Beskeder bliver ikke sendt eller gemt.
+        </p>
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>DigitalTryg – Viden til en tryggere hverdag.</p>
+    </div>
+  </footer>
+
+  <script src="accessibility.js" defer></script>
+</body>
+</html>

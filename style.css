@@ -1,0 +1,928 @@
+/* DIGITALTRYG - SAMLET STYLESHEET */
+:root {
+  --dark-green: #153d34;
+  --light-green: #dce8dc;
+  --cream: #f7f5ef;
+  --white: #ffffff;
+  --text: #172d29;
+  --border: #b7c7be;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--cream);
+}
+.container { width: min(90%, 1200px); margin-inline: auto; }
+
+/* TILGÆNGELIGHED */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 16px;
+  z-index: 100;
+  padding: 12px 18px;
+  color: var(--white);
+  background: var(--dark-green);
+}
+.skip-link:focus { top: 12px; }
+:focus-visible { outline: 3px solid #a34b00; outline-offset: 4px; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
+/* HEADER OG MENU */
+.site-header { background: var(--white); border-bottom: 1px solid var(--border); }
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px 24px;
+  padding-block: 18px;
+}
+.logo {
+  color: var(--dark-green);
+  font-size: 25px;
+  font-weight: 800;
+  text-decoration: none;
+}
+.nav-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 28px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.nav-list a {
+  display: inline-block;
+  padding: 8px 2px;
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 600;
+}
+.nav-list a:hover,
+.nav-list a[aria-current="page"] {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 7px;
+}
+
+/* FORSIDE / HERO */
+.hero {
+  background: linear-gradient(120deg, #e1eae0 0%, #f7f5ef 100%);
+  padding-block: 65px;
+}
+.hero-content {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  align-items: center;
+  gap: 55px;
+  min-height: 350px;
+}
+.hero-text { min-width: 0; max-width: 600px; }
+.eyebrow {
+  color: var(--dark-green);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+h1 {
+  color: var(--dark-green);
+  font-size: clamp(32px, 3.5vw, 50px);
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+  margin: 20px 0;
+}
+.hero-description {
+  max-width: 480px;
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+.button {
+  display: inline-block;
+  padding: 14px 28px;
+  color: var(--white);
+  background: var(--dark-green);
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 700;
+}
+.button:hover { background: #245c4d; }
+.hero-image { min-width: 0; width: 100%; }
+.hero-image img {
+  display: block;
+  width: 100%;
+  height: 340px;
+  object-fit: cover;
+  object-position: center 45%;
+  border-radius: 24px;
+}
+
+/* FIRE EMNEKORT */
+.topics { padding-block: 65px 90px; }
+.topics h2 {
+  color: var(--dark-green);
+  font-size: clamp(26px, 3vw, 36px);
+  margin-bottom: 30px;
+}
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+}
+.card {
+  min-width: 0;
+  padding: 26px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+}
+.card h3 {
+  margin-top: 0;
+  color: var(--dark-green);
+  font-size: 20px;
+  line-height: 1.3;
+}
+.card p { margin-bottom: 18px; }
+.card a {
+  color: var(--dark-green);
+  font-weight: 700;
+  text-underline-offset: 4px;
+}
+.card a:hover { text-decoration-thickness: 3px; }
+
+/* FOOTER */
+.site-footer {
+  padding-block: 28px;
+  color: var(--white);
+  background: var(--dark-green);
+  text-align: center;
+}
+
+/* TABLET */
+@media (max-width: 900px) {
+  .hero { padding-block: 55px; }
+  .hero-content { grid-template-columns: 1fr; gap: 30px; min-height: 0; }
+  .hero-image img { height: 300px; }
+  .card-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+/* MOBIL */
+@media (max-width: 600px) {
+  .header-content { flex-direction: column; align-items: flex-start; gap: 12px; }
+  .nav-list { gap: 10px 18px; }
+  .hero { padding-block: 45px; }
+  .hero-description { font-size: 17px; }
+  .hero-image img { height: 240px; }
+  .card-grid { grid-template-columns: 1fr; }
+  .topics { padding-block: 45px 60px; }
+}
+/* Ikon i informationskort */
+.card-icon {
+  display: block;
+  width: 42px;
+  height: 42px;
+  color: var(--dark-green);
+  margin-bottom: 20px;
+}
+
+/* =====================================
+   DIGITALTRYG – TIPS-SIDE
+   ===================================== */
+
+/* Introduktion */
+.tips-hero {
+  background: linear-gradient(120deg, #e1eae0, #f7f5ef);
+  padding: 75px 0;
+}
+
+.tips-hero-content {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: 60px;
+}
+
+.tips-hero h1 {
+  max-width: 650px;
+  font-size: clamp(34px, 4vw, 54px);
+}
+
+.tips-hero-art {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tips-hero-art svg {
+  display: block;
+  width: 100%;
+  max-width: 360px;
+  height: auto;
+}
+
+/* Overskrift og introduktion */
+.tips-section {
+  padding-top: 85px;
+  padding-bottom: 100px;
+}
+
+.tips-section h2 {
+  max-width: 720px;
+  margin: 12px 0 16px;
+  color: var(--dark-green);
+  font-size: clamp(28px, 3vw, 38px);
+  line-height: 1.25;
+}
+
+.tips-intro {
+  max-width: 650px;
+  margin: 0 0 40px;
+  font-size: 18px;
+}
+
+/* Seks råd */
+.tips-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.tip-card {
+  position: relative;
+  min-width: 0;
+  padding: 34px 28px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+}
+
+.tip-number {
+  display: block;
+  margin-bottom: 24px;
+  color: #587a68;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.tip-symbol {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 58px;
+  height: 58px;
+  margin-bottom: 25px;
+  border-radius: 18px;
+  background: var(--light-green);
+  color: var(--dark-green);
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.tip-card h3 {
+  margin: 0 0 14px;
+  color: var(--dark-green);
+  font-size: 21px;
+  line-height: 1.3;
+}
+
+.tip-card p {
+  margin: 0;
+}
+
+/* Afsluttende sektion */
+.tips-cta {
+  padding: 60px 0;
+  background: var(--light-green);
+}
+
+.tips-cta-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 35px;
+}
+
+.tips-cta h2 {
+  max-width: 580px;
+  margin: 12px 0;
+  color: var(--dark-green);
+  font-size: clamp(26px, 3vw, 36px);
+  line-height: 1.25;
+}
+
+.tips-cta p {
+  max-width: 580px;
+}
+
+.tips-cta .button {
+  flex-shrink: 0;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .tips-hero-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .tips-hero-art svg {
+    max-width: 280px;
+  }
+
+  .tips-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Mobil */
+@media (max-width: 600px) {
+  .tips-hero {
+    padding: 45px 0;
+  }
+
+  .tips-section {
+    padding-top: 55px;
+    padding-bottom: 65px;
+  }
+
+  .tips-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tip-card {
+    padding: 28px 24px;
+  }
+
+  .tips-cta {
+    padding: 45px 0;
+  }
+
+  .tips-cta-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .tips-cta .button {
+    flex-shrink: 1;
+  }
+}
+
+/* ==========================================
+   DIGITALTRYG - SIKKERHED-SIDE
+   ========================================== */
+
+/* Introduktion med illustration */
+.security-hero {
+  padding: 75px 0;
+  background: linear-gradient(120deg, #e1eae0, #f7f5ef);
+}
+
+.security-hero-content {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  align-items: center;
+  gap: 60px;
+}
+
+.security-hero h1 {
+  max-width: 650px;
+  font-size: clamp(34px, 4vw, 54px);
+}
+
+.security-illustration {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.security-illustration svg {
+  display: block;
+  width: 100%;
+  max-width: 360px;
+  height: auto;
+}
+
+/* Tre sikkerhedsemner */
+.security-section {
+  padding-top: 85px;
+  padding-bottom: 95px;
+}
+
+.security-section h2,
+.security-checklist h2,
+.security-bottom h2 {
+  color: var(--dark-green);
+  font-size: clamp(28px, 3vw, 38px);
+  line-height: 1.25;
+}
+
+.security-section h2 {
+  margin: 12px 0 16px;
+}
+
+.security-intro {
+  max-width: 650px;
+  margin: 0 0 40px;
+  font-size: 18px;
+}
+
+.security-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.security-card {
+  min-width: 0;
+  padding: 34px 28px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+}
+
+.security-number {
+  display: inline-block;
+  margin-bottom: 24px;
+  color: #587a68;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.security-card h3 {
+  margin: 0 0 18px;
+  color: var(--dark-green);
+  font-size: 23px;
+  line-height: 1.3;
+}
+
+.security-card p {
+  margin: 0 0 15px;
+}
+
+.security-card p:last-child {
+  margin-bottom: 0;
+}
+
+/* Digital tjekliste */
+.security-checklist {
+  padding: 75px 0;
+  background: var(--light-green);
+}
+
+.security-checklist-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 60px;
+}
+
+.security-checklist h2 {
+  margin: 12px 0 16px;
+}
+
+.checklist {
+  margin: 0;
+  padding: 30px 30px 30px 52px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+}
+
+.checklist li {
+  margin-bottom: 16px;
+  padding-left: 6px;
+}
+
+.checklist li:last-child {
+  margin-bottom: 0;
+}
+
+.checklist li::marker {
+  color: var(--dark-green);
+}
+
+/* Afsluttende sektion */
+.security-bottom {
+  padding-top: 75px;
+  padding-bottom: 85px;
+  text-align: center;
+}
+
+.security-bottom h2 {
+  margin: 0 0 15px;
+}
+
+.security-bottom p {
+  margin-bottom: 25px;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .security-hero-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .security-illustration svg {
+    max-width: 280px;
+  }
+
+  .security-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .security-checklist-content {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+}
+
+/* Mobil */
+@media (max-width: 600px) {
+  .security-hero {
+    padding: 45px 0;
+  }
+
+  .security-section {
+    padding-top: 55px;
+    padding-bottom: 65px;
+  }
+
+  .security-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .security-card {
+    padding: 28px 24px;
+  }
+
+  .security-checklist {
+    padding: 50px 0;
+  }
+
+  .checklist {
+    padding: 25px 25px 25px 42px;
+  }
+
+  .security-bottom {
+    padding-top: 55px;
+    padding-bottom: 65px;
+  }
+}
+
+/* ==========================================
+   DIGITALTRYG - KONTAKT-SIDE
+   ========================================== */
+
+/* Introduktion */
+.contact-hero {
+  padding: 75px 0;
+  background: linear-gradient(120deg, #e1eae0, #f7f5ef);
+}
+
+.contact-hero h1 {
+  font-size: clamp(34px, 4vw, 54px);
+}
+
+/* Kontaktindhold */
+.contact-section {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  align-items: start;
+  gap: 75px;
+  padding-top: 85px;
+  padding-bottom: 100px;
+}
+
+.contact-info h2,
+.contact-form-box h2 {
+  color: var(--dark-green);
+  font-size: clamp(27px, 3vw, 36px);
+  line-height: 1.25;
+}
+
+.contact-info h2 {
+  margin: 12px 0 20px;
+}
+
+.contact-info > p:not(.eyebrow) {
+  max-width: 450px;
+  font-size: 18px;
+}
+
+/* Informationsboks */
+.contact-note {
+  margin-top: 40px;
+  padding: 28px;
+  background: var(--light-green);
+  border-radius: 18px;
+}
+
+.contact-note h3 {
+  margin: 0 0 12px;
+  color: var(--dark-green);
+  font-size: 21px;
+}
+
+.contact-note p {
+  margin: 0;
+}
+
+/* Formular */
+.contact-form-box {
+  padding: 40px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+}
+
+.contact-form-box h2 {
+  margin: 0 0 30px;
+}
+
+.form-group {
+  margin-bottom: 24px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--dark-green);
+  font-weight: 700;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  display: block;
+  width: 100%;
+  padding: 13px 15px;
+  border: 1px solid #809b8e;
+  border-radius: 10px;
+  background: var(--white);
+  color: var(--text);
+  font: inherit;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 140px;
+}
+
+.form-group input:focus-visible,
+.form-group select:focus-visible,
+.form-group textarea:focus-visible {
+  outline: 3px solid #a34b00;
+  outline-offset: 3px;
+}
+
+.contact-form-box .button {
+  border: 0;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 700;
+}
+
+.form-disclaimer {
+  margin: 22px 0 0;
+  color: var(--text);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .contact-section {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+}
+
+/* Mobil */
+@media (max-width: 600px) {
+  .contact-hero {
+    padding: 45px 0;
+  }
+
+  .contact-section {
+    padding-top: 55px;
+    padding-bottom: 65px;
+  }
+
+  .contact-form-box {
+    padding: 25px 20px;
+  }
+
+  .contact-note {
+    margin-top: 25px;
+    padding: 24px;
+  }
+}
+
+/* TILGÆNGELIGHEDSMENU */
+.accessibility-widget {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 1000;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.accessibility-toggle {
+  padding: 14px 20px;
+  border: 2px solid #ffffff;
+  border-radius: 30px;
+  background: var(--dark-green);
+  color: #ffffff;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.2);
+}
+
+.accessibility-toggle:hover {
+  background: #245c4d;
+}
+
+.accessibility-panel {
+  width: min(320px, calc(100vw - 40px));
+  max-height: 65vh;
+  overflow-y: auto;
+  margin-bottom: 12px;
+  padding: 24px;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: #ffffff;
+  color: var(--text);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.18);
+}
+
+.accessibility-panel[hidden] {
+  display: none;
+}
+
+.accessibility-panel h2 {
+  margin: 0 0 8px;
+  color: var(--dark-green);
+  font-size: 24px;
+}
+
+.accessibility-panel p {
+  margin: 0 0 20px;
+}
+
+.accessibility-panel button {
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+  padding: 12px 14px;
+  border: 2px solid var(--dark-green);
+  border-radius: 10px;
+  background: #ffffff;
+  color: var(--dark-green);
+  font: inherit;
+  font-weight: 700;
+  text-align: left;
+  cursor: pointer;
+}
+
+.accessibility-panel button:hover {
+  background: var(--light-green);
+}
+
+@media (max-width: 600px) {
+  .accessibility-widget {
+    right: 12px;
+    bottom: 12px;
+  }
+
+  .accessibility-toggle {
+    padding: 12px 16px;
+  }
+}
+
+/* TILGÆNGELIGHED – STØRRE TEKST */
+body.large-text {
+  font-size: 20px;
+}
+
+body.large-text p,
+body.large-text li,
+body.large-text a,
+body.large-text label,
+body.large-text input,
+body.large-text select,
+body.large-text textarea,
+body.large-text button {
+  font-size: 1.25em;
+}
+
+body.large-text h1 {
+  font-size: clamp(38px, 5vw, 60px);
+}
+
+body.large-text h2 {
+  font-size: clamp(32px, 4vw, 44px);
+}
+
+body.large-text h3 {
+  font-size: 26px;
+}
+
+/* TILGÆNGELIGHED – HØJ KONTRAST */
+body.high-contrast {
+  --dark-green: #000000;
+  --light-green: #ffffff;
+  --cream: #ffffff;
+  --white: #ffffff;
+  --text: #000000;
+  --border: #000000;
+  background: #ffffff;
+  color: #000000;
+}
+
+body.high-contrast .hero,
+body.high-contrast .tips-hero,
+body.high-contrast .security-hero,
+body.high-contrast .contact-hero {
+  background: #ffffff;
+}
+
+body.high-contrast .site-header,
+body.high-contrast .card,
+body.high-contrast .tip-card,
+body.high-contrast .security-card,
+body.high-contrast .contact-form-box,
+body.high-contrast .contact-note,
+body.high-contrast .checklist,
+body.high-contrast .accessibility-panel {
+  background: #ffffff;
+  color: #000000;
+  border-color: #000000;
+}
+
+body.high-contrast .site-footer,
+body.high-contrast .button,
+body.high-contrast .accessibility-toggle {
+  background: #000000;
+  color: #ffffff;
+}
+
+body.high-contrast a:not(.button):not(.logo),
+body.high-contrast .logo {
+  color: #000000;
+}
+
+body.high-contrast .site-footer,
+body.high-contrast .site-footer p {
+  color: #ffffff;
+}
+
+body.high-contrast .accessibility-panel button {
+  background: #ffffff;
+  color: #000000;
+  border-color: #000000;
+}
+
+body.high-contrast :focus-visible {
+  outline: 4px solid #005fcc;
+  outline-offset: 4px;
+}
+
+/* VIDEOSEKTION – OM DIGITALTRYG */
+.video-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 280px;
+  margin: 28px 0;
+  padding: 30px;
+  border: 2px dashed #8eaa99;
+  border-radius: 18px;
+  background: #dce8dc;
+  color: #153d34;
+  text-align: center;
+}
+
+.video-placeholder p {
+  margin: 0;
+}
+
+@media (max-width: 600px) {
+  .video-placeholder {
+    min-height: 200px;
+    padding: 20px;
+  }
+}
